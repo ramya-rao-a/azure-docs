@@ -136,8 +136,8 @@ in your Event Hub
 const { EventProcessorHost, delay } = require("@azure/event-processor-host");
 
 // Define connection string and related Event Hubs entity name here
-const eventhubsConnectionString = "";
-const eventHubsName = "";
+const eventhubConnectionString = "";
+const eventHubName = "";
 const storageConnectionString = "";
 
 async function main() {
@@ -145,11 +145,11 @@ async function main() {
     "my-eph",
     storageConnectionString,
     "my-storage-container-name",
-    eventhubsConnectionString,
+    eventhubConnectionString,
     {
-      eventHubPath: eventHubsName,
+      eventHubPath: eventHubName,
       onEphError: (error) => {
-        console.log("[%s] Error: %O", ephName, error);
+        console.log("[%s] Error: %O", error);
       }
     }
   );
